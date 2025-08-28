@@ -23,7 +23,7 @@ voms-proxy-init --voms cms --out $(pwd)/voms_proxy.txt --hours 4
 export X509_USER_PROXY=$(pwd)/voms_proxy.txt
 
 # Download fragment from McM
-curl -s -k https://github.com/menglu21/Private_production/blob/main/step1_GEN/SMP-RunIISummer20UL18GEN-00070_1_cfg.py --retry 3 --create-dirs -o Configuration/GenProduction/python/SMP-RunIISummer20UL18GEN-00070-fragment.py
+curl -s -k https://raw.githubusercontent.com/menglu21/Private_production/refs/heads/main/step1_GEN/SMP-RunIISummer20UL18GEN-00070_1_cfg.py --retry 3 --create-dirs -o Configuration/GenProduction/python/SMP-RunIISummer20UL18GEN-00070-fragment.py
 [ -s Configuration/GenProduction/python/SMP-RunIISummer20UL18GEN-00070-fragment.py ] || exit $?;
 
 # Dump actual test code to a SMP-RunIISummer20UL18GEN-00070_test.sh file that can be run in Singularity
