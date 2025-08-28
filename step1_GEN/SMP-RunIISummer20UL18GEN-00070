@@ -14,7 +14,7 @@ generator = cms.EDFilter("Pythia8ConcurrentGeneratorFilter",
             pythia8CommonSettingsBlock,
             pythia8CP5SettingsBlock,
             pythia8PSweightsSettingsBlock,
-	          processParameters = cms.vstring(
+	        processParameters = cms.vstring(
                'WeakSingleBoson:ffbar2W = on',
                '24:onMode = off',
                '24:AddChannel = on 0.01 100 -11 12',
