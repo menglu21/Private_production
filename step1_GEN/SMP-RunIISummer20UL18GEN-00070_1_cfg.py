@@ -77,9 +77,11 @@ process.generator = cms.EDFilter("Pythia8ConcurrentGeneratorFilter",
         processParameters = cms.vstring(
             'WeakSingleBoson:ffbar2W = on', 
             '24:onMode = off', 
-            '24:AddChannel = on 0.01 100 -11 12 113', 
-            '24:AddChannel = on 0.01 100 -13 14 113', 
-            '24:onIfAny = 113'
+            '24:AddChannel = on 0.01 100 -11 12 443', 
+            '24:AddChannel = on 0.01 100 -13 14 443', 
+            '24:onIfAny = 443',
+			'443:onMode = off', 
+            '443:onIfMatch = 13 -13' 
         ),
         pythia8CP5Settings = cms.vstring(
             'Tune:pp 14', 
