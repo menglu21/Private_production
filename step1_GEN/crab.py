@@ -21,7 +21,7 @@ NJOBS = 10
 config.Data.totalUnits = config.Data.unitsPerJob * NJOBS
 config.Data.publication = True
 config.Data.outLFNDirBase = "/store/user/melu/"
-config.Data.outputDatasetTag = "WtoLNuRho_TuneCP5_13TeV_pythia8"
+config.Data.outputDatasetTag = "WtoLNuJPsi_TuneCP5_13TeV_pythia8"
 
 config.section_("Site")
 config.Site.storageSite = "T2_CH_CERN"
