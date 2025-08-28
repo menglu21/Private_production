@@ -1,0 +1,33 @@
+import FWCore.ParameterSet.Config as cms
+
+from Configuration.Generator.Pythia8CommonSettings_cfi import *
+from Configuration.Generator.MCTunes2017.PythiaCP5Settings_cfi import *
+from Configuration.Generator.PSweightsPythia.PythiaPSweightsSettings_cfi import *
+
+generator = cms.EDFilter("Pythia8ConcurrentGeneratorFilter",
+	maxEventsToPrint = cms.untracked.int32(1),
+	pythiaPylistVerbosity = cms.untracked.int32(1),
+	pythiaHepMCVerbosity = cms.untracked.bool(False),
+	comEnergy = cms.double(13000.0),
+
+	PythiaParameters = cms.PSet(
+            pythia8CommonSettingsBlock,
+            pythia8CP5SettingsBlock,
+            pythia8PSweightsSettingsBlock,
+	          processParameters = cms.vstring(
+               'WeakSingleBoson:ffbar2W = on',
+               '24:onMode = off',
+               '24:AddChannel = on 0.01 100 -11 12',
+               '24:AddChannel = on 0.01 100 -13 14',
+               '24:onIfAny = 12 14',
+               '443:onMode = off', 
+               '443:onIfMatch = 13 -13' 
+        ),
+	    parameterSets = cms.vstring('pythia8CommonSettings',
+                                    'pythia8CP5Settings',
+                                    'pythia8PSweightsSettings',
+                                    'processParameters',
+                                    'spinParameters'
+                                    )
+	)
+)
